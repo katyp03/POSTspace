@@ -3,8 +3,8 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-// document.getElementById("editButton").addEventListener("click", function(){
-// 	document.querySelectorAll(".content").forEach(element => element.style.display="none");
-// 	document.querySelectorAll(".editForm").forEach(element => element.style.display="block");
-// 	document.querySelectorAll(".editFormLabel").forEach(element => element.style.display="block");
+// document.getElementById("editCommentButton").addEventListener("click", function(){
+// 	document.querySelectorAll(".hideEditComment").forEach(element => element.style.display="none");
+// 	document.querySelectorAll(".hideEditCommentForm").forEach(element => element.style.display="block");
+// 	// document.querySelectorAll(".editFormLabel").forEach(element => element.style.display="block");
 // });

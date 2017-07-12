@@ -30,7 +30,7 @@
 			<!-- allow a user to edit a comment if they wrote it: -->
 			<% if comment.user == @current_user %>
 			<br />
-			<button class="hideEditComment" type="button">Edit Comment</button>
+			<button id="editCommentButton" class="hideEditComment" type="button">Edit Comment</button>
 			<span class="hideEditCommentForm"><%= render '/comments/form', comment: comment %></span>
 			<!-- <button type="button">Delete Comment</button> -->
 			<%= link_to 'Delete Comment', comment_path(comment), method: :delete %>
