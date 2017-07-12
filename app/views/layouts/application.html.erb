@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>POSTspace</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <h1><a href='/'>POSTspace</a></h1>
+      <p id="notice"><%= notice %></p>
+  	<% if @current_user %>
+      <div id="user_nav">
+        <h3><%= @current_user.full_name %></h3>
+          <ul>
+            <li><a href="/users/<%= @current_user.id %>">My Profile</a></li>
+            <li id="newPost"><a href="/posts/new">New Post</a></li>
+            <li><%= link_to 'Sign Out', '/logout', method: :post %></li>
+          </ul>
+      </div>
+  </header>
+  	<% else %>
+      <p>Please Sign In Or Create An Account</p>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

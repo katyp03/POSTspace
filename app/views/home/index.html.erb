@@ -1,0 +1,16 @@
+<% if @current_user %>
+	<div id="recentDiv">
+		<ul>
+		<h2 id="recentText">Most Recent Posts</h2>
+			<% @posts.each do |post| %>
+				<li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+ 			<% end %>
+  		</ul>
+  		<%= link_to 'Edit My Profile', edit_user_path(@current_user) %> |
+  		<%= link_to 'Delete My Profile', user_path(@current_user), method: :delete %>
+	</div>
+<% else %>
+<h2>Post and Explore</h2>
+  		<a href='/login'><button type ="button">Sign In</button></a><br />
+  		<a href='/users/new'><button type ="button">Create New Account</button></a>
+<% end %>
