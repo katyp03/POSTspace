@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/', notice: 'User was successfully created.' }
+        format.html { redirect_to '/' }
         format.json { render :show, status: :created, location: @user }
         session[:user_id] = @user.id
       else
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
       @user.destroy
     end
     respond_to do |format|
-      format.html { redirect_to '/', notice: 'User was successfully destroyed.' }
+      format.html { redirect_to '/', notice: 'User was successfully deleted.' }
       format.json { head :no_content }
     end
   end

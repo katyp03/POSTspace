@@ -1,27 +1,20 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+<div id="postPage">
+<div id="leftPost">
+<div id="postTitle"><p>
+  <!-- <strong>Title:</strong> -->
+  <strong><%= @post.title %></strong>
 </p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
+</div>
+<div id="postUser"><p>
+  <strong>Posted By:</strong>
   <a href="/users/<%= @post.user_id %>"><%= @post.user.full_name %></a>
 </p>
-
-<% if @post.image %>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @post.image %>
+</div>
+<div id="postBody"><p>
+  <!-- <strong>Body:</strong> -->
+  <%= @post.body %>
 </p>
-<% else %>
-	<p>No picture given...</p>
-<% end %>
-
+</div>
 <!-- comment area -->
 <div id="commentDiv">
 	<% @post.comments.each do |comment| %>
@@ -54,4 +47,15 @@
 <% else %>
 
 <% end %>
-
+</div>
+<div class="postImage">
+<% if @post.image %>
+<p>
+  <!-- <strong>Image:</strong> -->
+  <%= image_tag @post.image %>
+</p>
+<% else %>
+	<p>No picture given...</p>
+<% end %>
+</div>
+</div>

@@ -1,13 +1,81 @@
 <% if @current_user %>
 	<div id="recentDiv">
-		<ul>
-		<h2 id="recentText">Most Recent Posts</h2>
-			<% @posts.each do |post| %>
-				<li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
- 			<% end %>
-  		</ul>
-  		<%= link_to 'Edit My Profile', edit_user_path(@current_user) %> |
-  		<%= link_to 'Delete My Profile', user_path(@current_user), method: :delete %>
+		
+  		<!-- <%# link_to 'Edit My Profile', edit_user_path(@current_user) %> | -->
+  		<%# link_to 'Delete My Profile', user_path(@current_user), method: :delete %>
+
+
+  		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
+    <li data-target="#myCarousel" data-slide-to="7"></li>
+    <li data-target="#myCarousel" data-slide-to="8"></li>
+    <li data-target="#myCarousel" data-slide-to="9"></li>
+    <li data-target="#myCarousel" data-slide-to="10"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag @posts[9].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[8].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[7].image %>
+    </div>
+
+    <div class="item active">
+      <%= image_tag @posts[6].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[5].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[4].image %>
+    </div>
+
+    <div class="item active">
+      <%= image_tag @posts[3].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[2].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[1].image %>
+    </div>
+
+    <div class="item">
+      <%= image_tag @posts[0].image %>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
 	</div>
 <% else %>
 <h2>Post and Explore</h2>

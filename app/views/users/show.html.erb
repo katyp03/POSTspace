@@ -1,17 +1,21 @@
+<div id="userInfo">
 <p>
   <strong>Name:</strong>
   <%= @user.full_name %>
 </p>
-<p>
-  <strong><ul>Posts:</strong>
-  <% @user.posts.each do |post| %>
-	<li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
-  <% end %>
-  </ul>
-
+</div>
+<div id="userEditDelete">
 <% if @current_user && @current_user.id == @user.id %>
   <%= link_to 'Edit My Profile', edit_user_path(@user) %> |
   <%= link_to 'Delete My Profile', user_path(@user), method: :delete %>
 <% else %>
 
 <% end %>
+</div>
+<div id="userPostDiv">
+  <strong><ul id="postThumbs">Posts:</strong><br /><br />
+  <% @user.posts.each do |post| %>
+	<li class="thumbnail" style="background-image:url(<%= Post.find(post.id).image %>)"><br /><a href="/posts/<%= post.id %>"><span id="thumbText"><%= post.title.upcase %></span></a></li>
+  <% end %>
+  </ul>
+</div>

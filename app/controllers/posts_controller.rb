@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post.user_id = @current_user.id
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
     @user = @post.user
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to @user, notice: 'Post was successfully deleted.' }
+      format.html { redirect_to @user }
       format.json { head :no_content }
     end
   end
