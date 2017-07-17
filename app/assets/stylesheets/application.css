@@ -62,6 +62,12 @@ body button:hover, body input[type=submit]:hover {
 }
 /*end of buttons*/
 
+/*all timestamps*/
+.time_created {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+/*end of timestamps*/
+
 #yieldDiv {
 	height: 72vh;
 	overflow-y: scroll;
