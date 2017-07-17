@@ -1,5 +1,7 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Go Back To Post', @post %>
+<div id="editPostPage">
+	<h1>Editing Post</h1>
+	<div id="editPostDiv">
+		<%= render 'form', post: @post %>
+		<span id="backToPost"><%= link_to 'Go Back To Post', @post %></span>
+	</div>
+</div>

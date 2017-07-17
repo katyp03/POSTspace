@@ -12,24 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <%= form.text_field :title, id: :post_title, placeholder: 'Title' %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
+    <%= form.text_field :image, id: :post_image, placeholder: 'Link To Image URL' %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :post_image %>
+    <%= form.text_area :body, id: :post_body, placeholder: 'Post Body' %>
   </div>
-
-  <!-- <div class="field">
-    <%# form.label :user_id %>
-    <%# form.text_field :user_id, id: :post_user_id %>
-  </div> -->
 
   <div class="actions">
     <%= form.submit %>

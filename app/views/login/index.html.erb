@@ -1,9 +1,12 @@
 <% if @current_user %>
 	<h3>Hi, <%= @current_user.full_name %>!</h3>
 <% else %>
-	<%= form_tag '/login' do %>
-	<%= text_field_tag :email, nil, placeholder: 'Email' %>
-	<%= password_field_tag :password, nil, placeholder: 'Password' %>
+<div id="loginDiv">
+<h1>Sign In</h1>
+	<%= form_tag '/login' do %><br />
+	<%= text_field_tag :email, nil, placeholder: 'Email' %><br /><br />
+	<%= password_field_tag :password, nil, placeholder: 'Password' %><br /><br />
 	<%= submit_tag 'Login' %>
 	<% end %>
+</div>
 <% end %>

@@ -1,45 +1,10 @@
 <div id="postPage">
 <div id="leftPost">
-<div id="postTitle"><p>
-  <!-- <strong>Title:</strong> -->
-  <strong><%= @post.title %></strong>
-</p>
+<div id="postTitle">
+  <p><strong><%= @post.title %></strong></p>
 </div>
-<div id="postUser"><p>
-  <strong>Posted By:</strong>
-  <a href="/users/<%= @post.user_id %>"><%= @post.user.full_name %></a>
-</p>
-</div>
-<div id="postBody"><p>
-  <!-- <strong>Body:</strong> -->
-  <%= @post.body %>
-</p>
-</div>
-<!-- comment area -->
-<div id="commentDiv">
-	<% @post.comments.each do |comment| %>
-			<!-- list existing comments and the users who wrote them: -->
-			<li><span id="commentText"><%= comment.body %> - </span><span id="commentUser"><a href='/users/<%= comment.user.id %>'><%= comment.user.full_name %></a></span>
-			<!-- allow a user to edit a comment if they wrote it: -->
-			<% if comment.user == @current_user %>
-			<br />
-			<button id="editCommentButton" class="hideEditComment" type="button">Edit Comment</button>
-			<span class="hideEditCommentForm"><%= render '/comments/form', comment: comment %></span>
-			<!-- <button type="button">Delete Comment</button> -->
-			<%= link_to 'Delete Comment', comment_path(comment), method: :delete %>
-			<% else %>
-
-	<% end %>
-		</li>
-<% end %>
-<!-- allow a user to comment if they're logged in: -->
-<% if @current_user %>
-	<h4 class="hideCommentButton">Leave A Comment</h4>
-	<span class="hideNewCommentForm"><%= render 'comments/form', comment: Comment.new(user_id: @current_user.id, post_id: @post.id) %></span>
-<% else %>
-
-<% end %>
-</div>
+<div id="postUser">
+  <p><strong><a href="/users/<%= @post.user_id %>"><%= @post.user.full_name %></a></strong></p>
 <!-- allow a user to edit or delete post if they wrote it: -->
 <% if @current_user && @current_user.id == @post.user_id %>
 	<%= link_to 'Edit Post', edit_post_path(@post) %> |
@@ -47,6 +12,38 @@
 <% else %>
 
 <% end %>
+</div>
+<div id="postBody">
+	<p><%= @post.body %></p>
+</div>
+<!-- comment area -->
+<div id="commentDiv">
+	<% @post.comments.each do |comment| %>
+			<!-- list existing comments and the users who wrote them: -->
+			<li><span id="commentText"><%= comment.body %> - </span><span id="commentUser"><a href='/users/<%= comment.user.id %>'><strong><%= comment.user.full_name %></strong></a></span>
+			<!-- allow a user to edit a comment if they wrote it: -->
+			<% if comment.user == @current_user %>
+			<br />
+			<span id="editCommentLink" class="hideEditComment">Edit Comment</span><span class="hideEditComment">  |  </span>
+			<span class="hideEditCommentForm"><%= render '/comments/form', comment: comment %></span>
+			<button type="button" class="hideDeleteCommentButton"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></button>
+			<span class="deleteCommentLink"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></span>
+			<br /><br />
+			<% else %>
+
+	<% end %>
+		</li>
+<% end %>
+<!-- allow a user to comment if they're logged in: -->
+<% if @current_user %>
+	<button type="button" id="newCommentButton" class="hideCommentButton">Leave A Comment</button><br />
+	<span class="hideNewCommentForm">
+		<h3>What do you think?</h3>
+		<%= render 'comments/form', comment: Comment.new(user_id: @current_user.id, post_id: @post.id) %></span><br />
+<% else %>
+
+<% end %>
+</div>
 </div>
 <div class="postImage">
 <% if @post.image %>

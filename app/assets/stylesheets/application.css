@@ -22,11 +22,45 @@
  	padding: 60px 70px 15px;
  	top: 0;
  	position: fixed;
+ 	border-bottom: 1px solid rgba(181, 186, 183, 0.8);
  }
 
  body {
  	margin: 0px;
  }
+
+/*all form inputs*/
+body input {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #737373;
+	/*color: #0C1385;*/
+	font-size: 20px;
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+	display: block;
+	margin: auto;
+}
+/*end of form inputs*/
+
+ /*all buttons*/
+ body button, body input[type=submit] {
+	background-color: rgba(230, 247, 255, 0.5);
+	border: 1px solid #a6a6a6;
+	border-radius: 50px;
+	padding: 10px;
+	color: #737373;
+	font-size: 16px;
+	margin: auto;
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+	transition-duration: 0.5s;
+}
+
+body button:hover, body input[type=submit]:hover {
+	color: #0C1385;
+	font-size: 18px;
+	background-color: rgba(230, 247, 255, 0.9);
+}
+/*end of buttons*/
 
 #yieldDiv {
 	height: 72vh;
@@ -44,7 +78,7 @@
  	margin-top: 0px;
  }
 
- #logo a:link, a:visited {
+ #logo a:link, #logo a:visited {
  	font-size: 50px;
  	text-decoration: none;
  	padding: 20px;
@@ -64,6 +98,7 @@
 
  #logo .font-effect-emboss {
  	font-family: 'Raleway', sans-serif;
+ 	color: #0C1385;
  }
 
  #logo .spaceFont {
@@ -75,6 +110,17 @@
  	font-family: 'Raleway', sans-serif;
  	font-size: 30px;
  	text-align: right;
+ 	color:#0C1385;
+ }
+
+ #pleaseSignin {
+ 	font-size: 20px;
+ 	color: #0C1385;
+ 	font-family: 'Raleway', sans-serif;
+ 	background-color: rgba(255, 255, 255, 0.8);
+ 	border: 1px solid rgba(255, 255, 255, 0.8);
+ 	border-radius: 30px;
+ 	padding: 7px;
  }
 
  .container #navbar {
@@ -84,17 +130,23 @@
 
  #navbar li {
  	display: inline-block;
- 	padding-left: 60px;
- 	padding-right: 60px;
+ 	padding-left: 30px;
+ 	padding-right: 30px;
  }
 
- #navbar li a:link, a:visited {
+ #navbar li a:link, #navbar li a:visited {
  	font-size: 18px;
  	text-decoration: none;
+ 	color: #0C1385;
  }
 
  #navbar li a:hover {
  	text-decoration: underline;
+ 	background-color: rgba(255, 255, 255, 0.8);
+ 	border: 1px solid rgba(255, 255, 255, 0.8);
+ 	border-radius: 30px;
+ 	color: #0C1385;
+ 	padding: 5px;
  }
 
 #myCarousel {
@@ -131,11 +183,10 @@ footer .container {
 	height: 6VH;
 	bottom: 0;
 	position: fixed;
-	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
 	padding-top: 7px;
 	padding-bottom: 7px;
 	text-align: center;
-	border-top: 3px solid #e6f7ff;
+	border-top: 1px solid rgba(181, 186, 183, 0.8);
 	background-color: rgba(230, 247, 255, 0.9);
 }
 
@@ -143,5 +194,7 @@ footer .container {
 	margin-top: 7px;
 	margin-bottom: 7px;
 	font-size: 20px;
+	color: rgba(012, 019, 133, 0.7);
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 /*end of footer

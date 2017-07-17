@@ -1,5 +1,7 @@
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Go Back To Profile Page', @user %>
+<div id="editUserPage">
+	<h1>Update Your Profile</h1>
+		<div id="editUserDiv">
+			<%= render 'form', user: @user %><br />
+			<span id="backToProfile"><%= link_to 'Go Back To Profile Page', @user %></span>
+		</div>
+</div>

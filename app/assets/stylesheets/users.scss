@@ -1,6 +1,48 @@
+// in new user page
+#newUserPage, #editUserPage {
+	text-align: center;
+	margin: auto;
+	margin-top: 70px;
+
+	h1 {
+		font-family: 'Kite One', sans-serif;
+		font-size: 40px;
+		color: rgba(012, 019, 133, 0.7);
+		margin-bottom: 40px;
+	}
+
+	#newUserDiv, #editUserDiv {
+		
+		input {
+			margin: auto;
+			margin-bottom: 18px;
+		}
+
+		input[type=submit] {
+			margin-top: 40px;
+		}
+	}
+}
+// end of new user page
+
+// edit user page
+#backToProfile a:link, #backToProfile a:visited {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	color: rgba(012, 019, 133, 0.7);
+	transition-duration: 0.5s;
+}
+
+#backToProfile a:hover {
+	font-size: 22px;
+	color: rgba(012, 019, 133, 0.7);
+}
+// end of edit user page
+
+// user show page
 #userInfo {
-	margin-top: 30px;
-	margin-bottom: 20px;
+	margin-top: 50px;
+	margin-bottom: 16px;
 	text-align: center;
 
 	p {
@@ -8,8 +50,9 @@
 		font-size: 20px;
 
 		strong {
-			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-			font-size: 22px;
+			font-family: 'Kite One', sans-serif;
+			font-size: 34px;
+			color: rgba(012, 019, 133, 0.7);
 
 		}
 	}
@@ -28,14 +71,17 @@
 	margin: 0 auto;
 
 	ul#postThumbs {
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-		font-size: 24px;
+		font-family: 'Kite One', sans-serif;
+		font-size: 28px;
+		color: rgba(012, 019, 133, 0.7);
 		text-align: center;
 		margin-top: 60px;
 		padding-left: 0px;
 
 		li {
+			margin-top: 20px;
 			font-size: 14px;
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 
 			a {
 				background-color: rgba(255, 255, 255, 0.8);
@@ -46,3 +92,4 @@
 		}
 	}
 }
+// end of user show page

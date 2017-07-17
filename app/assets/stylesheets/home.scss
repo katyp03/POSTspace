@@ -1,3 +1,33 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#homeh1Div {
+	text-align: center;
+	width: 540px;
+	margin: auto;
+	margin-bottom: 40px;
+	
+	h1 {
+		font-family: 'Kite One', sans-serif;
+		margin-top: 100px;
+		font-size: 60px;
+		color: rgba(012, 019, 133, 0.7);
+	}
+
+	#signinDiv {
+		margin: auto;
+		margin-top: 40px;
+
+		button {
+			width: 115px;
+		}
+		button:hover {
+			width: 130px;
+		}
+
+		#createButton button {
+			width: 220px;
+		}
+
+		#createButton button:hover {
+			width: 230px;
+		}
+	}
+}

@@ -1,6 +1,49 @@
+// new post page and some edit post page
+#newPostPage, #editPostPage {
+	text-align: center;
+	margin: auto;
+	margin-top: 70px;
+
+	h1 {
+		font-family: 'Kite One', sans-serif;
+		font-size: 40px;
+		color: rgba(012, 019, 133, 0.7);
+		margin-bottom: 40px;
+	}
+
+	#newPostDiv, #editPostDiv {
+		
+		input {
+			margin: auto;
+			margin-bottom: 30px;
+			font-size: 16px;
+			width: 320px;
+
+		}
+
+		input[type=submit] {
+			margin-top: 40px;
+			font-size: 16px;
+			transition-duration: 0.4s;
+		}
+
+		input[type=submit]:hover {
+			font-size: 18px;
+		}
+
+		textarea#post_body {
+			width: 250px;
+			height: 130px;
+			resize: none;
+		}
+	}
+}
+// end of new post page
+
+// show post page
 #postPage {
 	width: 95%;
-	margin: 0 auto;
+	margin: auto;
 	text-align: center;
 }
 
@@ -15,11 +58,10 @@
 	margin-bottom: 20px;
 	text-align: center;
 	width: 400px;
-	// display: inline-block;
 
 	p {
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-		font-size: 26px;
+		font-family: 'Raleway', sans-serif;
+		font-size: 30px;
 	}
 
 }
@@ -48,13 +90,10 @@
 	// margin-left: 50px;
 
 	p {
-		font-family: 'Raleway', sans-serif;
-		font-size: 20px;
-
-		strong {
-			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-			font-size: 22px;
-			color: #60c9d4;
+		a:link, a:visited {
+			font-family: 'Kite One', sans-serif;
+			font-size: 24px;
+			color: rgba(012, 019, 133, 0.7);
 		}
 	}
 }
@@ -72,7 +111,114 @@
 		width: 90%;
 	}
 }
+// end of show post page
 
-.hideEditCommentForm {
-	display: none;
+// edit comment page
+#backToPost a:link, #backToPost a:visited {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	color: rgba(012, 019, 133, 0.7);
+	transition-duration: 0.5s;
 }
+
+#backToPost a:hover {
+	font-size: 22px;
+	color: rgba(012, 019, 133, 0.7);
+}
+// end of edit comment page
+
+// comment area
+#commentDiv {
+	#commentText {
+		font-size: 14px;
+		font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+		color: #404040;
+	}
+
+	#commentUser a:link, #commentUser a:visited, #commentUser a:hover {
+		font-size: 16px;
+		font-family: 'Raleway', sans-serif;
+		color: rgba(012, 019, 133, 0.7);
+	}
+
+	#editCommentLink.hideEditComment, .deleteCommentLink a:link, .deleteCommentLink a:visited {
+		color: #8c8c8c;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	#editCommentLink.hideEditComment:hover, .deleteCommentLink a:hover {
+		color: rgba(012, 019, 133, 0.7);
+	}
+}
+
+.hideEditCommentForm, .hideDeleteCommentButton, .hideNewCommentForm {
+	display: none;
+
+	h3 {
+		font-family: 'Raleway', sans-serif;
+		font-size: 20px;
+		color: rgba(012, 019, 133, 0.7);
+	}
+
+	input {
+		font-size: 14px;
+		width: 290px;
+		color: #8c8c8c;
+	}
+
+	input[type=submit] {
+		width: 160px;
+		font-size: 16px;
+		margin: auto;
+		transition-duration: 0.5s;
+	}
+
+	input[type=submit]:hover {
+		width: 170px;
+		font-size: 18px;
+		text-decoration: underline;
+	}
+}
+
+.hideCommentButton:hover {
+	text-decoration: underline;
+}
+// end of comment area
+
+// post index page
+#indexPostDiv {
+	text-align: center;
+	width: 860px;
+	margin: 0 auto;
+
+	ul#indexThumbs {
+		font-family: 'Kite One', sans-serif;
+		font-size: 28px;
+		color: rgba(012, 019, 133, 0.7);
+		text-align: center;
+		margin-top: 60px;
+		padding-left: 0px;
+
+		li {
+			margin-top: 20px;
+			font-size: 14px;
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+			a {
+				background-color: rgba(255, 255, 255, 0.8);
+				color: black;
+				padding: 5px;
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
+#indexThumbs .thumbnail {
+    background-size: cover;
+    height: 240px;
+    width: 240px;
+    display: inline-block;
+}
+// end of post index page

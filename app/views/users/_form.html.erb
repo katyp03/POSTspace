@@ -12,23 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :fname, 'First Name' %>
-    <%= form.text_field :fname, id: :user_fname %>
+    <%= form.text_field :fname, id: :user_fname, placeholder: 'First Name' %>
   </div>
 
   <div class="field">
-    <%= form.label :lname, 'Last Name' %>
-    <%= form.text_field :lname, id: :user_lname %>
+    <%= form.text_field :lname, id: :user_lname, placeholder: 'Last Name' %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.text_field :email, id: :user_email, placeholder: 'Email' %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+    <%= form.text_field :password, id: :user_password, placeholder: 'Password' %>
   </div>
 
   <div class="actions">
