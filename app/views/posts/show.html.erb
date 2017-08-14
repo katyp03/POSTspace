@@ -10,8 +10,6 @@
 <% if @current_user && @current_user.id == @post.user_id %>
 	<%= link_to 'Edit Post', edit_post_path(@post) %> |
 	<%= link_to 'Delete Post', post_path(@post), method: :delete %>
-<% else %>
-
 <% end %>
 </div>
 <div id="postBody">
@@ -19,31 +17,27 @@
 </div>
 <!-- comment area -->
 <div id="commentDiv">
+	<% if @post.comments %>
 	<% @post.comments.each do |comment| %>
-			<!-- list existing comments and the users who wrote them: -->
-			<li><span id="commentText"><%= comment.body %> - </span><span id="commentUser"><a href='/users/<%= comment.user.id %>'><strong><%= comment.user.full_name %></strong></a></span><br />
-			<span class="time_created"><%= @comment.created_at.strftime('%D %r') %></span>
+		<!-- list existing comments and the users who wrote them: -->
+		<li><span id="commentText"><%= comment.body %> - </span><span id="commentUser"><a href='/users/<%= comment.user.id %>'><strong><%= comment.user.full_name %></strong></a></span><br />
+			<span class="time_created"><%= comment.created_at.strftime('%D %r') %></span>
 			<!-- allow a user to edit a comment if they wrote it: -->
 			<% if comment.user == @current_user %>
-			<br />
-			<span id="editCommentLink" class="hideEditComment">Edit Comment</span><span class="hideEditComment">  |  </span>
-			<span class="hideEditCommentForm"><%= render '/comments/form', comment: comment %></span>
-			<button type="button" class="hideDeleteCommentButton"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></button>
-			<span class="deleteCommentLink"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></span>
-			<br /><br />
-			<% else %>
-
-	<% end %>
+				<br /><span id="editCommentLink" class="hideEditComment">Edit Comment</span><span class="hideEditComment">  |  </span>
+				<span class="hideEditCommentForm"><%= render '/comments/form', comment: comment %></span>
+				<button type="button" class="hideDeleteCommentButton"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></button>
+				<span class="deleteCommentLink"><%= link_to 'Delete Comment', comment_path(comment), method: :delete %></span><br /><br />
+			<% end %>
 		</li>
-<% end %>
+	<% end %>
+	<% end %>
 <!-- allow a user to comment if they're logged in: -->
 <% if @current_user %>
 	<button type="button" id="newCommentButton" class="hideCommentButton">Leave A Comment</button><br />
 	<span class="hideNewCommentForm">
 		<h3>What do you think?</h3>
 		<%= render 'comments/form', comment: Comment.new(user_id: @current_user.id, post_id: @post.id) %></span><br />
-<% else %>
-
 <% end %>
 </div>
 </div>
